@@ -1,0 +1,20 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        int cnt = 0;
+        int val = 0;
+        for(int i:nums){
+            if(cnt == 0){
+                val = i;
+                cnt++;
+            }
+            else if(i == val){//number is greater frequency will always be kept in val;
+                cnt++;
+            }
+           else if(i != val){
+                cnt--;
+            }
+        }
+        return val;
+        
+    }
+}
